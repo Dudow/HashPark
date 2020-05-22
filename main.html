@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Projeto Park</title>
+</head>
+
+<body onload="mostrarPatio()">
+    <div class="container">
+        <div class="header clearfix">
+            <h2>Estacionamento</h2>
+            <div class="jumbotron">
+                <form id="formulario">
+                    <div class="form-group">
+                        <label>Modelo do Veículo:</label>
+                        <input autocomplete="off" type="text" id="modeloCarro" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Placa do Veículo:</label>
+                        <input autocomplete="off" type="text" minlength="8" id="placaCarro" class="form-control text-uppercase">
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        Adicionar
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="row marketing">
+            <div class="container-fluid table-responsive">
+                <table class="table table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Modelo</th>
+                            <th scope="col">Placa</th>
+                            <th scope="col">Entrada</th>
+                            <th scope="col">Finalizar</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultados">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <script src="js/main.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+
+        <script type="text/javascript">
+            $("#placaCarro").mask("SSS-0000");
+        </script>
+</body>
+
+</html>

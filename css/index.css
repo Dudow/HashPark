@@ -1,0 +1,115 @@
+.logo {
+    width: 170px;
+}
+
+.git {
+    font-size: 40px;
+    color: #1fcbe1;
+}
+
+.banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 70vw;
+}
+
+.banner h1 {
+    font-size: 3em;
+}
+
+.call {
+    height: 50vh;
+    background: linear-gradient(90deg, #1ee195, #1fcbe1);
+    color: white;
+    font-family: 'DM Mono', monospace;
+}
+
+.botao {
+    border-radius: 60px;
+    width: 165px;
+    height: 45px;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+[iniciar] {
+    background-color: white;
+    border: solid 2px white;
+    color: #1ee195;
+}
+
+[iniciar]:hover {
+    background-color: rgb(228, 228, 228);
+    border: solid 2px white;
+    color: #53dfa9;
+}
+
+[saibamais] {
+    background-color: transparent;
+    border: solid 2px white;
+    color: white;
+}
+
+[saibamais]:hover {
+    background-color: rgb(228, 228, 228);
+    border: solid 2px white;
+    color: white;
+}
+
+.features {
+    height: auto;
+    width: 100%;
+    padding: 50px 20% 0 20%;
+    box-sizing: border-box;
+}
+
+.features h1 {
+    color: #53dfa9;
+}
+
+.features-container {
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.features-container section {
+    width: 290px;
+    height: 250px;
+    flex-direction: column;
+    display: flex;
+    text-align: center;
+}
+
+.features-container p {
+    padding-right: 5px;
+}
+
+.features-container .section h3 {
+    color: #1ee195;
+}
+
+.features-container .section h3 i {
+    margin-right: 5px;
+    color: #1ee195;
+}
+
+.rodape {
+    display: flex;
+    justify-content: center;
+    color: white;
+    background-color: #1ee195;
+}
+
+.rodape a {
+    color: white
+}
+
+.heart {
+    color: rgb(255, 217, 217);
+}
