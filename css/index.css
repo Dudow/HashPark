@@ -26,7 +26,15 @@
     font-family: 'DM Mono', monospace;
 }
 
+.grupo-botao {
+    display: flex;
+    justify-content: flex-start;
+}
+
 .botao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 60px;
     width: 165px;
     height: 45px;
@@ -38,6 +46,7 @@
     background-color: white;
     border: solid 2px white;
     color: #1ee195;
+    margin-right: 30px;
 }
 
 [iniciar]:hover {
@@ -114,4 +123,40 @@
 
 .heart {
     color: rgb(255, 217, 217);
+}
+
+@media (min-width:641px) and (max-width: 800px) {
+    .botao {
+        width: 35%;
+    }
+    .banner h1 {
+        font-size: 2.5em;
+    }
+    .banner h4 {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 640px) {
+    .call {
+        height: 60vh;
+    }
+    .banner h1 {
+        font-size: 2em;
+    }
+    .banner h4 {
+        font-size: 1em;
+    }
+    .botao {
+        width: 110px;
+        height: 35px;
+        font-size: 0.7em;
+        font-weight: 500;
+    }
+    [iniciar] {
+        margin-right: 10px;
+    }
+    .features h1 {
+        font-size: 2em;
+    }
 }
