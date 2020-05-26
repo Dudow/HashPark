@@ -41,9 +41,9 @@
 }
 
 [iniciar]:hover {
-    background-color: rgb(228, 228, 228);
+    background-color: #1fcbe1;
     border: solid 2px white;
-    color: #53dfa9;
+    color: white;
 }
 
 [saibamais] {
@@ -53,7 +53,7 @@
 }
 
 [saibamais]:hover {
-    background-color: rgb(228, 228, 228);
+    background-color: #1fcbe1;
     border: solid 2px white;
     color: white;
 }
@@ -100,8 +100,10 @@
 }
 
 .rodape {
+    height: 35px;
     display: flex;
     justify-content: center;
+    align-items: center;
     color: white;
     background-color: #1ee195;
 }

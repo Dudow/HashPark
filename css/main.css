@@ -1,0 +1,27 @@
+.cabecalho-tabela {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: #343a40;
+}
+
+.cabecalho-tabela th {
+    width: 25%;
+    display: flex;
+    justify-content: space-around;
+    background-color: #343a40;
+}
+
+.corpo-tabela tr {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+}
+
+.corpo-tabela td {
+    width: 25%;
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+}
