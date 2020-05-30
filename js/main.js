@@ -1,5 +1,4 @@
 document.getElementById('formulario').addEventListener('submit', cadastraVeiculo)
-document.getElementById('confirmar').addEventListener('click', cadastraVeiculo)
 
 function cadastraVeiculo(e) {
 
@@ -60,8 +59,6 @@ function mostrarPatio() {
     }
 }
 
-
-
 function retirarVeiculo(placa) {
 
     var patio = JSON.parse(localStorage.getItem('patio'))
@@ -74,18 +71,22 @@ function retirarVeiculo(placa) {
         localStorage.setItem('patio', JSON.stringify(patio))
     }
 
+
     mostrarPatio()
 }
 
 function placaRepetida(placaCarro) {
     var carrosrep = JSON.parse(localStorage.getItem('patio'));
 
-    for (let i = 0; i < carrosrep.length; i++) {
-        var placa = carrosrep[i].placa;
+    if (!!carrosrep) {
+        for (let i = 0; i < carrosrep.length; i++) {
+            var placa = carrosrep[i].placa;
 
-        if (placaCarro == placa) {
-            alert("Placa repetida");
-            return true;
+            if (placaCarro == placa) {
+                alert("Placa repetida");
+                return true;
+            }
         }
     }
+
 }
