@@ -1,3 +1,7 @@
+body {
+    background-color: #eeeeee;
+}
+
 .cabecalho-tabela {
     width: 100%;
     display: flex;
@@ -24,4 +28,74 @@
     display: flex;
     justify-content: space-around;
     text-align: left;
+}
+
+.logo {
+    width: 170px;
+}
+
+.formulario {
+    background-color: #1fcbe1;
+    color: white;
+    font-size: 1.5em;
+}
+
+.entrada {
+    margin: 0;
+}
+
+.navbar {
+    background-color: #343a40;
+}
+
+.git {
+    font-size: 40px;
+    color: #1fcbe1;
+}
+
+.rodape {
+    height: 35px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #343a40;
+    margin: 0;
+}
+
+.rodape a {
+    color: whitesmoke;
+}
+
+.rodape h5 {
+    margin: auto;
+}
+
+.btn-confirma {
+    background-color: #1ee195;
+    color: white;
+    font-size: 1.1em;
+}
+
+.btn-confirma:hover {
+    background-color: #1acf8a;
+    color: white;
+    font-size: 1.1em;
+}
+
+.btn-adiciona {
+    background-color: whitesmoke;
+    color: #1acf8a;
+    font-weight: 500;
+    border: solid 1px #1acf8a;
+}
+
+.btn-adiciona:hover {
+    background-color: rgb(235, 235, 235);
+    color: #1acf8a;
+}
+
+.table {
+    min-height: 285px;
 }

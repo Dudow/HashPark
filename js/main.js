@@ -55,7 +55,7 @@ function mostrarPatio() {
         var hora = patio[i].hora
         var minuto = patio[i].minuto
 
-        carros.innerHTML += '<tr><td>' + modelo +
+        carros.innerHTML += '<tr><td class="text-capitalize">' + modelo +
             '</td><td class="text-uppercase">' + placa +
             '</td><td>' + hora + ':' + minuto +
             '</td><td>' + '<button data-toggle="modal" data-target="#modalDelete" class="btn btn-danger" onclick="acompanharPreco(\'' + placa + '\')">Retirar</button>' +
