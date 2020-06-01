@@ -5,12 +5,16 @@ function cadastraVeiculo(e) {
     var modeloCarro = document.getElementById('modeloCarro').value
     var placaCarro = document.getElementById('placaCarro').value
     var time = new Date()
+    var price = setInterval(function() {
+        price += 5
+    }, 900000)
 
     carro = {
         modelo: modeloCarro,
         placa: placaCarro,
         hora: time.getHours(),
-        minuto: time.getMinutes()
+        minuto: time.getMinutes(),
+        price: price
     }
 
     if (placaRepetida(placaCarro)) {
@@ -46,17 +50,18 @@ function mostrarPatio() {
     carros.innerHTML = ''
 
     for (let i = 0; i < patio.length; i++) {
-        var modelo = patio[i].modelo;
-        var placa = patio[i].placa;
-        var hora = patio[i].hora;
-        var minuto = patio[i].minuto;
+        var modelo = patio[i].modelo
+        var placa = patio[i].placa
+        var hora = patio[i].hora
+        var minuto = patio[i].minuto
 
         carros.innerHTML += '<tr><td>' + modelo +
             '</td><td class="text-uppercase">' + placa +
             '</td><td>' + hora + ':' + minuto +
-            '</td><td>' + '<button data-toggle="modal" data-target="#modalDelete" class="btn btn-danger">Retirar</button>' +
+            '</td><td>' + '<button data-toggle="modal" data-target="#modalDelete" class="btn btn-danger" onclick="acompanharPreco(\'' + placa + '\')">Retirar</button>' +
             '</td></tr>'
     }
+
 }
 
 function retirarVeiculo(placa) {
@@ -73,6 +78,28 @@ function retirarVeiculo(placa) {
 
 
     mostrarPatio()
+}
+
+function acompanharPreco(placa) {
+
+    var priceslot = document.getElementById('priceslot')
+    var patio = JSON.parse(localStorage.getItem('patio'))
+
+    for (var i = 0; i < patio.length; i++) {
+
+        var price = patio[i].price.toLocaleString('pt-BR', {
+            style: 'currency',
+            currency: 'BRL'
+        })
+
+        if (patio[i].placa == placa) {
+            priceslot.innerHTML = '<h5 id="preco"> Preço: ' + price + '</h5>'
+        }
+
+        localStorage.setItem('patio', JSON.stringify(patio))
+    }
+    mostrarPatio()
+
 }
 
 function placaRepetida(placaCarro) {
