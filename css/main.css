@@ -96,6 +96,6 @@ body {
     color: #1acf8a;
 }
 
-.table {
-    min-height: 285px;
+.container-fluid {
+    min-height: 300px;
 }

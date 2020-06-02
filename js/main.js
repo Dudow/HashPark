@@ -5,16 +5,14 @@ function cadastraVeiculo(e) {
     var modeloCarro = document.getElementById('modeloCarro').value
     var placaCarro = document.getElementById('placaCarro').value
     var time = new Date()
-    var price = setInterval(function() {
-        price += 5
-    }, 900000)
+    var price = acompanharPreco()
 
     carro = {
         modelo: modeloCarro,
         placa: placaCarro,
         hora: time.getHours(),
         minuto: time.getMinutes(),
-        price: price
+        preco: price
     }
 
     if (placaRepetida(placaCarro)) {
@@ -85,14 +83,21 @@ function acompanharPreco(placa) {
     var priceslot = document.getElementById('priceslot')
     var patio = JSON.parse(localStorage.getItem('patio'))
 
+
+
     for (var i = 0; i < patio.length; i++) {
 
-        var price = patio[i].price.toLocaleString('pt-BR', {
+        var hora = patio[i].hora
+        var minuto = patio[i].minuto
+
+        var price = calculaPreco(hora, minuto).toLocaleString('pt-BR', {
             style: 'currency',
             currency: 'BRL'
         })
 
         if (patio[i].placa == placa) {
+
+            patio[i].preco = price
             priceslot.innerHTML = '<h5 id="preco"> Preço: ' + price + '</h5>'
         }
 
@@ -115,5 +120,25 @@ function placaRepetida(placaCarro) {
             }
         }
     }
+}
 
+function calculaPreco(hora, minuto) {
+
+    var data = new Date()
+    var horaCobrar = data.getHours()
+    var minutoCobrar = data.getMinutes()
+
+    horaCobrar -= hora
+    minutoCobrar -= minuto
+
+    console.log("Hora:" + horaCobrar)
+    console.log("Minuto:" + minutoCobrar)
+    console.log("Hora entrada:" + hora)
+    console.log("Minuto entrada:" + minuto)
+
+    var preco = (horaCobrar * 15) + (minutoCobrar * 0.25);
+
+    data = horaCobrar = minutoCobrar = 0
+
+    return preco;
 }
